@@ -1,0 +1,29 @@
+<div class="aluno-card">
+  
+  
+  <img [src]="dadosAluno.foto" alt="Foto do Aluno" class="avatar">
+
+  <h2>{{ dadosAluno.nome }}</h2>
+  <p><strong>Matrícula:</strong> {{ dadosAluno.matricula }}</p>
+
+  <hr>
+
+  <div class="form-group">
+    <label>Curso:</label>
+    <input type="text" [(ngModel)]="curso">
+  </div>
+  <p class="info-curso">Curso atual: <span>{{ curso }}</span></p>
+
+  <hr>
+
+  <p>Situação: 
+    <span [style.color]="getCorStatus()" style="font-weight: bold;">
+      {{ matriculaAtiva ? 'MATRICULADO' : 'TRANCADO' }}
+    </span>
+  </p>
+
+  <button (click)="alternarMatricula()" [class.btn-danger]="matriculaAtiva" [class.btn-success]="!matriculaAtiva">
+    {{ matriculaAtiva ? 'Trancar Curso' : 'Destrancar Curso' }}
+  </button>
+
+</div>
