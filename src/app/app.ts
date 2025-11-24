@@ -13,5 +13,4 @@ export class AppComponent {
   title = 'portal-aluno';
 }
 
-// Alias for older imports that expect `App`
 export { AppComponent as App };
